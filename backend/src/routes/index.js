@@ -1,0 +1,38 @@
+import { Router } from "express";
+import { appointmentRouter } from "./v1/appointment.routes.js";
+import { analyticsRouter } from "./v1/analytics.routes.js";
+import { authRouter } from "./v1/auth.routes.js";
+import { consultationRouter } from "./v1/consultation.routes.js";
+import { dashboardRouter } from "./v1/dashboard.routes.js";
+import { doctorScheduleRouter } from "./v1/doctor-schedule.routes.js";
+import { laboratoryRouter } from "./v1/laboratory.routes.js";
+import { notificationRouter } from "./v1/notification.routes.js";
+import { operationsRouter } from "./v1/operations.routes.js";
+import { patientRouter } from "./v1/patient.routes.js";
+import { pharmacyRouter } from "./v1/pharmacy.routes.js";
+import { queueRouter } from "./v1/queue.routes.js";
+import { reportRouter } from "./v1/report.routes.js";
+import { systemRouter } from "./v1/system.routes.js";
+import { userRouter } from "./v1/user.routes.js";
+import { vaccinationRouter } from "./v1/vaccination.routes.js";
+import { visitRouter } from "./v1/visit.routes.js";
+
+export const apiRouter = Router();
+
+apiRouter.use("/appointments", appointmentRouter);
+apiRouter.use("/analytics", analyticsRouter);
+apiRouter.use("/auth", authRouter);
+apiRouter.use("/consultations", consultationRouter);
+apiRouter.use("/dashboard", dashboardRouter);
+apiRouter.use("/doctor-schedules", doctorScheduleRouter);
+apiRouter.use("/laboratory", laboratoryRouter);
+apiRouter.use("/notifications", notificationRouter);
+apiRouter.use("/operations", operationsRouter);
+apiRouter.use("/patients", patientRouter);
+apiRouter.use("/pharmacy", pharmacyRouter);
+apiRouter.use("/queue", queueRouter);
+apiRouter.use("/reports", reportRouter);
+apiRouter.use("/system", systemRouter);
+apiRouter.use("/users", userRouter);
+apiRouter.use("/vaccination", vaccinationRouter);
+apiRouter.use("/visits", visitRouter);

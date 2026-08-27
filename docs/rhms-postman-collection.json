@@ -1,0 +1,37 @@
+{
+  "info": {
+    "name": "RHMS API Collection",
+    "_postman_id": "rhms-api-collection",
+    "description": "Development API collection for RHMS academic demonstration.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5000/api/v1" },
+    { "key": "token", "value": "" },
+    { "key": "patientId", "value": "RPHC-PAT-DEMO" }
+  ],
+  "item": [
+    {
+      "name": "Auth Login",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/auth/login",
+        "body": { "mode": "raw", "raw": "{\n  \"email\": \"admin@rphc.gov\",\n  \"password\": \"Admin@123\"\n}" }
+      }
+    },
+    { "name": "Profile", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/auth/profile" } },
+    { "name": "Patients List", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/patients" } },
+    { "name": "Appointments", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/appointments" } },
+    { "name": "Queue", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/queue" } },
+    { "name": "Pharmacy Prescriptions", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/pharmacy/prescriptions" } },
+    { "name": "Laboratory Requests", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/laboratory/requests" } },
+    { "name": "Vaccination Records", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/vaccination/records" } },
+    { "name": "Reports Preview", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/reports/preview?type=executive" } },
+    { "name": "Notifications", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/notifications" } },
+    { "name": "Platform Context", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/platform/context" } },
+    { "name": "FHIR Export", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/platform/fhir/export?patientId={{patientId}}" } },
+    { "name": "AI Duplicates", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/platform/ai/duplicates" } },
+    { "name": "Health Ready", "request": { "method": "GET", "url": "http://localhost:5000/health/ready" } }
+  ]
+}

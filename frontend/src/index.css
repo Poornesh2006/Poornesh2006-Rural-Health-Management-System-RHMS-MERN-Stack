@@ -1,0 +1,302 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  font-family: Inter, "Noto Sans Tamil", "Nirmala UI", "Segoe UI", sans-serif;
+  background: #f5f9fc;
+  color: #1e293b;
+  --color-bg: #f5f9fc;
+  --color-bg-elevated: #ffffff;
+  --color-bg-subtle: #edf4f8;
+  --color-background: var(--color-bg);
+  --color-surface: #ffffff;
+  --color-surface-hover: #f4f8fb;
+  --color-surface-active: #e8f2ff;
+  --color-surface-elevated: rgba(255, 255, 255, 0.94);
+  --color-surface-strong: #ffffff;
+  --color-surface-muted: #edf4f8;
+  --color-border: #d8e2eb;
+  --color-border-strong: #c2d0dc;
+  --color-foreground: #1e293b;
+  --color-foreground-muted: #475569;
+  --color-foreground-subtle: #64748b;
+  --color-foreground-disabled: #94a3b8;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748b;
+  --color-text-disabled: #94a3b8;
+  --color-text-inverse: #ffffff;
+  --color-brand: #0f6cbd;
+  --color-brand-strong: #0a5ca8;
+  --color-primary: #0f6cbd;
+  --color-primary-hover: #0a5ca8;
+  --color-primary-soft: #e6f2ff;
+  --color-secondary: #059669;
+  --color-accent: #0891b2;
+  --color-accent-soft: #e0f7fb;
+  --color-warning: #b45309;
+  --color-warning-bg: #fef3c7;
+  --color-danger: #b91c1c;
+  --color-danger-bg: #fee2e2;
+  --color-success: #15803d;
+  --color-success-bg: #dcfce7;
+  --color-info: #1d4ed8;
+  --color-info-bg: #dbeafe;
+  --color-focus-ring: rgba(15, 108, 189, 0.18);
+  --sidebar-bg: #ffffff;
+  --sidebar-group-bg: #f6f9fc;
+  --sidebar-border: #dce6ee;
+  --sidebar-text: #172033;
+  --sidebar-text-secondary: #475569;
+  --sidebar-icon: #2563eb;
+  --sidebar-icon-muted: #64748b;
+  --sidebar-active-bg: linear-gradient(90deg, #e7f1ff, #edf9f5);
+  --sidebar-active-text: #075985;
+  --sidebar-active-border: rgba(15, 108, 189, 0.18);
+  --sidebar-active-shadow: 0 4px 16px rgba(15, 108, 189, 0.1);
+  --shadow-soft: 0 24px 70px rgba(15, 23, 42, 0.08);
+  --shadow-quiet: 0 12px 30px rgba(15, 23, 42, 0.06);
+  --shadow-float: 0 32px 90px rgba(15, 23, 42, 0.14);
+  --gradient-brand: linear-gradient(135deg, #075985 0%, #0f6cbd 48%, #0891b2 100%);
+  --gradient-calm: linear-gradient(145deg, rgba(15, 108, 189, 0.11), rgba(8, 145, 178, 0.07) 45%, rgba(5, 150, 105, 0.08));
+  --gradient-surface: linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(255, 255, 255, 0.93));
+  --radius-xl: 32px;
+  --radius-lg: 24px;
+  --radius-md: 18px;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg: #08111f;
+  --color-bg-elevated: #101a2e;
+  --color-bg-subtle: #0b1526;
+  --color-background: var(--color-bg);
+  --color-surface: #111c31;
+  --color-surface-hover: #16243d;
+  --color-surface-active: #1b2c49;
+  --color-surface-elevated: rgba(16, 26, 46, 0.86);
+  --color-surface-strong: #101a2e;
+  --color-surface-muted: #0b1526;
+  --color-border: #25334a;
+  --color-border-strong: #34445e;
+  --color-foreground: #f8fafc;
+  --color-foreground-muted: #cbd5e1;
+  --color-foreground-subtle: #94a3b8;
+  --color-foreground-disabled: #64748b;
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #94a3b8;
+  --color-text-disabled: #64748b;
+  --color-text-inverse: #08111f;
+  --color-brand: #60a5fa;
+  --color-brand-strong: #93c5fd;
+  --color-primary: #60a5fa;
+  --color-primary-hover: #93c5fd;
+  --color-primary-soft: rgba(96, 165, 250, 0.16);
+  --color-secondary: #34d399;
+  --color-accent: #67e8f9;
+  --color-accent-soft: rgba(103, 232, 249, 0.12);
+  --color-warning: #fcd34d;
+  --color-warning-bg: rgba(245, 158, 11, 0.14);
+  --color-danger: #fca5a5;
+  --color-danger-bg: rgba(239, 68, 68, 0.14);
+  --color-success: #86efac;
+  --color-success-bg: rgba(34, 197, 94, 0.14);
+  --color-info: #93c5fd;
+  --color-info-bg: rgba(59, 130, 246, 0.14);
+  --color-focus-ring: rgba(96, 165, 250, 0.18);
+  --sidebar-bg: #0b1526;
+  --sidebar-group-bg: #101a2e;
+  --sidebar-border: #25334a;
+  --sidebar-text: #f8fafc;
+  --sidebar-text-secondary: #cbd5e1;
+  --sidebar-icon: #60a5fa;
+  --sidebar-icon-muted: #94a3b8;
+  --sidebar-active-bg: linear-gradient(90deg, rgba(59, 130, 246, 0.22), rgba(14, 165, 233, 0.12));
+  --sidebar-active-text: #ffffff;
+  --sidebar-active-border: rgba(96, 165, 250, 0.32);
+  --sidebar-active-shadow: 0 8px 20px rgba(2, 6, 23, 0.28);
+  --shadow-soft: 0 28px 80px rgba(2, 6, 23, 0.42);
+  --shadow-quiet: 0 14px 34px rgba(2, 6, 23, 0.28);
+  --shadow-float: 0 35px 100px rgba(2, 6, 23, 0.52);
+  --gradient-brand: linear-gradient(135deg, #0c4a6e 0%, #0f6cbd 48%, #0891b2 100%);
+  --gradient-calm: linear-gradient(145deg, rgba(15, 108, 189, 0.22), rgba(76, 201, 240, 0.12) 45%, rgba(0, 166, 118, 0.14));
+  --gradient-surface: linear-gradient(180deg, rgba(17, 28, 49, 0.94), rgba(16, 26, 46, 0.9));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: var(--color-foreground);
+  background:
+    radial-gradient(circle at top left, color-mix(in srgb, var(--color-accent) 18%, transparent), transparent 24%),
+    radial-gradient(circle at top right, color-mix(in srgb, var(--color-primary) 16%, transparent), transparent 26%),
+    radial-gradient(circle at bottom left, color-mix(in srgb, var(--color-secondary) 10%, transparent), transparent 22%),
+    linear-gradient(180deg, color-mix(in srgb, var(--color-background) 92%, white) 0%, var(--color-background) 42%, color-mix(in srgb, var(--color-background) 88%, #dbeafe) 100%);
+  font-family: Inter, "Noto Sans Tamil", "Nirmala UI", "Segoe UI", sans-serif;
+  line-height: 1.58;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.glass-panel {
+  background: var(--color-surface-elevated);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.ui-display {
+  font-size: clamp(2.25rem, 4vw, 4.75rem);
+  font-family: Poppins, Inter, "Noto Sans Tamil", sans-serif;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  color: var(--color-text-primary);
+}
+
+.ui-heading {
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-family: Poppins, Inter, "Noto Sans Tamil", sans-serif;
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: var(--color-text-primary);
+}
+
+.ui-heading-sm {
+  font-size: 1.1rem;
+  font-family: Poppins, Inter, "Noto Sans Tamil", sans-serif;
+  font-weight: 650;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+  color: var(--color-text-primary);
+}
+
+.ui-copy {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+.ui-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-brand);
+}
+
+.ui-stat {
+  font-family: "Space Grotesk", Inter, sans-serif;
+}
+
+.app-shell-bg {
+  background:
+    radial-gradient(circle at top left, color-mix(in srgb, var(--color-accent) 14%, transparent), transparent 22%),
+    radial-gradient(circle at 80% 18%, color-mix(in srgb, var(--color-primary) 16%, transparent), transparent 20%),
+    radial-gradient(circle at bottom right, color-mix(in srgb, var(--color-secondary) 10%, transparent), transparent 24%);
+}
+
+.surface-card {
+  background: var(--gradient-surface), var(--gradient-calm);
+}
+
+.section-hero {
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.18), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.12), transparent 22%),
+    var(--gradient-brand);
+  color: #ffffff;
+}
+
+.mesh-panel {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--color-surface) 88%, transparent), color-mix(in srgb, var(--color-surface) 78%, transparent)),
+    radial-gradient(circle at top, color-mix(in srgb, var(--color-accent) 12%, transparent), transparent 32%);
+}
+
+.soft-outline {
+  border: 1px solid var(--color-border);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--color-text-inverse) 18%, transparent);
+}
+
+::placeholder {
+  color: var(--color-text-muted);
+  opacity: 1;
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(8px);
+  opacity: 0.55;
+}
+
+.sidebar-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--color-border-strong) 75%, transparent) transparent;
+}
+
+.sidebar-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-border-strong) 75%, transparent);
+  border-radius: 999px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--color-border-strong) 100%, transparent);
+}
+
+[data-lang="ta"] body,
+[lang="ta"] body {
+  line-height: 1.62;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+:root[data-reduce-motion="true"] *,
+:root[data-reduce-motion="true"] *::before,
+:root[data-reduce-motion="true"] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  scroll-behavior: auto !important;
+  transition-duration: 0.01ms !important;
+}
