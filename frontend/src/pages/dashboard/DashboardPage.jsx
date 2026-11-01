@@ -113,7 +113,7 @@ export function DashboardPage() {
       <StatsGrid metrics={summary.metrics} />
 
       <section className="grid gap-6 xl:grid-cols-[1.3fr_0.9fr]">
-        <QueuePanel />
+        <QueuePanel items={summary.liveQueue} />
         <ActivityTimeline activities={summary.recentActivities} />
       </section>
 

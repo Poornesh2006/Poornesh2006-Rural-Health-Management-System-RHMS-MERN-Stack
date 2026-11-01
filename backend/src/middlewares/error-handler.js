@@ -33,8 +33,11 @@ export function errorHandler(error, request, response, _next) {
     statusCode: error.statusCode || 500,
   }, "Unhandled application error");
 
-  return response.status(error.statusCode || 500).json({
+  const statusCode = error.statusCode || 500;
+  return response.status(statusCode).json({
     success: false,
-    message: error.message || "Internal server error",
+    message: statusCode >= 500 && process.env.NODE_ENV === "production"
+      ? "Internal server error"
+      : error.message || "Internal server error",
   });
 }

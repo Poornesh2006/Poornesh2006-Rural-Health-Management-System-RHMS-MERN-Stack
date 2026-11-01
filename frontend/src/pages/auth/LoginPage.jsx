@@ -14,8 +14,8 @@ export function LoginPage() {
   const { t } = useTranslation();
   const { login, loading } = useAuth();
   const [formState, setFormState] = useState({
-    email: "admin@rphc.gov",
-    password: "Admin@123",
+    email: "",
+    password: "",
     rememberMe: true,
   });
   const [errorMessage, setErrorMessage] = useState("");
@@ -103,10 +103,9 @@ export function LoginPage() {
                 <input checked={formState.rememberMe} className="rounded" onChange={(event) => setFormState((current) => ({ ...current, rememberMe: event.target.checked }))} type="checkbox" />
                 <span>{t("common.rememberMe")}</span>
               </label>
-              <button className="font-semibold text-[var(--color-brand)]" type="button">{t("common.forgotPassword")}</button>
+              <span>{t("common.contactAdministrator")}</span>
             </div>
 
-            <p className="text-sm text-[var(--color-foreground-muted)]">{t("login.demoNote")}</p>
           </form>
         </Card>
       </div>

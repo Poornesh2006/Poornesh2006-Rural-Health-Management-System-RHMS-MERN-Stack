@@ -1,9 +1,8 @@
-import { queueItems, queuePerformance } from "../../data/mockDashboard";
 import { Badge } from "../ui/Badge";
 import { Card, CardContent, CardHeader } from "../ui/Card";
 import { DataTable } from "../ui/DataTable";
 
-export function QueuePanel() {
+export function QueuePanel({ items = [] }) {
   const queueColumns = [
     { key: "service", label: "Service" },
     { key: "average", label: "Average Wait" },
@@ -20,7 +19,7 @@ export function QueuePanel() {
       />
 
       <CardContent className="space-y-4">
-        {queueItems.map((item) => (
+        {items.map((item) => (
           <article
             key={item.token}
             className="flex flex-col gap-3 rounded-[1.5rem] border border-[var(--color-border)] bg-[var(--color-surface-elevated)] p-4 md:flex-row md:items-center md:justify-between"
@@ -46,7 +45,7 @@ export function QueuePanel() {
           </article>
         ))}
 
-        <DataTable columns={queueColumns} rows={queuePerformance} />
+        <DataTable columns={queueColumns} rows={items.length ? [{ service: "Live queue", average: `${Math.round(items.reduce((sum, item) => sum + item.estimatedWaitMinutes, 0) / items.length)} min`, throughput: String(items.length) }] : []} />
       </CardContent>
     </Card>
   );

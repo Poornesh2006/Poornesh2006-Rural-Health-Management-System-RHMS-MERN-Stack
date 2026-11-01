@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { FiActivity, FiCalendar, FiShield, FiUsers } from "react-icons/fi";
-import { metrics as fallbackMetrics } from "../../data/mockDashboard";
 import { StatCard } from "../ui/StatCard";
 import { staggerParent } from "../../motion/transitions";
 
@@ -15,7 +14,7 @@ const iconMap = {
   "Low Stock Alerts": FiShield,
 };
 
-export function StatsGrid({ metrics = fallbackMetrics }) {
+export function StatsGrid({ metrics = [] }) {
   return (
     <motion.section
       animate="visible"

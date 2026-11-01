@@ -2,7 +2,7 @@
 
 Project banner placeholder
 
-RHMS is a MERN-based Rural Health Management System designed for academic demonstration and portfolio presentation. It supports patient registration, visit history, appointments, token queue, consultation, pharmacy, laboratory, vaccination, analytics, offline-first workflows, English and Tamil UI, notifications, multi-PHC foundations, consent-controlled referrals, and safe AI-assisted review tools.
+RHMS is a MERN-based Rural Health Management System for authorized primary-health workflows. It supports patient registration, visit history, appointments, token queue, consultation, pharmacy, laboratory, vaccination, analytics, offline-first workflows, English and Tamil UI, notifications, multi-PHC foundations, consent-controlled referrals, and safe AI-assisted review tools.
 
 ## Problem Statement
 
@@ -18,7 +18,7 @@ Rural Primary Health Centres often depend on paper-based workflows that make pat
 - Laboratory request lifecycle, result entry, verification, and review notifications
 - Vaccination scheduling, stock tracking, certificate generation, and due-list workflows
 - Executive analytics, reports, PDF/Excel/CSV exports, and village-level summaries
-- In-app notifications with preferences plus demo-safe email/SMS/push adapters
+- In-app notifications with preferences and provider-configured email/SMS/push adapters
 - PWA support, offline drafts, queued sync, and connectivity indicators
 - English and Tamil interface support
 - Multi-PHC platform foundations, referrals, consents, FHIR-style export, AI governance, outreach, and device management
@@ -40,10 +40,6 @@ Screenshot placeholders:
 - AI review
 
 See [docs/screenshot-guide.md](docs/screenshot-guide.md).
-
-## Demo Link
-
-Deployment link placeholder
 
 ## Technology Stack
 
@@ -98,9 +94,9 @@ Create `backend/.env` from `backend/.env.example`.
 
 Important variables are documented in [docs/installation-guide.md](docs/installation-guide.md).
 
-## Demo Accounts
+## First administrator
 
-Development demo credentials are documented in [docs/demo-guide.md](docs/demo-guide.md).
+Production accounts are not created automatically. Provision the first administrator through an approved operational process before allowing staff access.
 
 ## Folder Structure
 
@@ -181,11 +177,9 @@ See [docs/deployment-guide.md](docs/deployment-guide.md).
 
 ## Documentation Links
 
-- [Project Report](docs/project-report.md)
-- [Presentation Outline](docs/presentation-outline.md)
-- [Demo Script](docs/demo-script.md)
-- [Viva Preparation](docs/viva-preparation.md)
-- [Demo Fallback Plan](docs/demo-fallback-plan.md)
+- [Production Readiness](docs/production-readiness.md)
+- [Render Deployment](docs/render-deployment.md)
+- [Security Audit](docs/security-audit.md)
 - [Installation Guide](docs/installation-guide.md)
 - [Troubleshooting Guide](docs/troubleshooting-guide.md)
 - [Module Docs Index](docs/modules/README.md)
@@ -193,7 +187,7 @@ See [docs/deployment-guide.md](docs/deployment-guide.md).
 ## Future Roadmap
 
 - Complete full tenant enforcement across all legacy modules
-- Add richer seeded demo datasets and guided tours
+- Add automated lint, test, and Docker workflows
 - Expand FHIR resources and integration adapters
 - Add automated lint, test, and Docker workflows
 - Add production-grade mobile companion and kiosk flows
@@ -208,4 +202,4 @@ License decision pending project owner selection.
 
 ## Disclaimer
 
-This project is for academic and demonstration purposes unless formally deployed and validated. It does not replace qualified medical judgment. AI features require authorized human review. Demo data is synthetic. Real-world deployment requires legal, privacy, security, and clinical validation.
+This project does not replace qualified medical judgment. AI features require authorized human review. Real-world deployment requires legal, privacy, security, and clinical validation.

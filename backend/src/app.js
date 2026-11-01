@@ -10,12 +10,17 @@ import { metricsMiddleware } from "./middlewares/metrics.js";
 import { notFoundHandler } from "./middlewares/not-found.js";
 import { env } from "./config/env.js";
 import { requestContextMiddleware } from "./utils/request-context.js";
+import { requireAuth, requireRoles } from "./middlewares/auth.js";
+import { ROLES } from "./constants/roles.js";
 
 export const app = express();
 
 app.use(
   cors({
-    origin: env.corsOrigin,
+    origin(origin, callback) {
+      if (!origin || env.corsOrigins.includes(origin)) return callback(null, true);
+      return callback(new Error("Origin is not allowed by CORS policy"));
+    },
     credentials: true,
   }),
 );
@@ -45,7 +50,7 @@ app.use(metricsMiddleware);
 app.get("/health", getLiveness);
 app.get("/health/live", getLiveness);
 app.get("/health/ready", getReadiness);
-app.get("/health/dependencies", getDependencies);
+app.get("/health/dependencies", requireAuth, requireRoles(ROLES.ADMIN), getDependencies);
 
 app.use("/api/v1", apiRouter);
 app.use(notFoundHandler);

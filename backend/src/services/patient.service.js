@@ -6,6 +6,7 @@ import { Visit } from "../models/visit.model.js";
 import { createPatientSchema, updatePatientSchema } from "../validators/patient.validator.js";
 import { calculateAge, calculateBmi } from "../utils/health-metrics.js";
 import { generatePatientId } from "../utils/id-generator.js";
+import { randomUUID } from "crypto";
 
 export const patientService = {
   async listPatients(query, tenant) {
@@ -44,7 +45,8 @@ export const patientService = {
     return patientRepository.create({
       ...parsedPayload,
       patientId,
-      qrCodeValue: `rhms://patient/${patientId}`,
+      // This value is intentionally opaque: it has no patient identifier or clinical data.
+      qrCodeValue: `rhms-card:${randomUUID()}`,
       fullName,
       age: calculateAge(parsedPayload.dateOfBirth),
       vitals: {

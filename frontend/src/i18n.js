@@ -5,6 +5,7 @@ const resources = {
   en: {
     translation: {
       common: {
+        contactAdministrator: "Contact your system administrator for account recovery.",
         appName: "RHMS Portal",
         language: "Language",
         english: "English",
@@ -198,6 +199,7 @@ const resources = {
   ta: {
     translation: {
       common: {
+        contactAdministrator: "கணக்கு மீட்புக்கு உங்கள் கணினி நிர்வாகியைத் தொடர்புகொள்ளவும்.",
         appName: "RHMS தளம்",
         language: "மொழி",
         english: "English",

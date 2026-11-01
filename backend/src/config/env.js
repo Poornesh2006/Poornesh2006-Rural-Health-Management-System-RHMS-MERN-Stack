@@ -55,7 +55,7 @@ export const env = {
   jwtExpiresIn: source.JWT_EXPIRES_IN,
   jwtRefreshSecret: source.JWT_REFRESH_SECRET,
   jwtRefreshExpiresIn: source.JWT_REFRESH_EXPIRES_IN,
-  corsOrigin: source.CORS_ORIGIN,
+  corsOrigins: source.CORS_ORIGIN.split(",").map((origin) => origin.trim()).filter(Boolean),
   defaultAdminEmail: source.DEFAULT_ADMIN_EMAIL,
   defaultAdminPassword: source.DEFAULT_ADMIN_PASSWORD,
   logLevel: source.LOG_LEVEL,

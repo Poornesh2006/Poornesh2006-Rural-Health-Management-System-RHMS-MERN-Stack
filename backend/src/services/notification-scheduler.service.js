@@ -20,4 +20,8 @@ export const notificationSchedulerService = {
       }
     }, 60 * 1000);
   },
+  stop() {
+    if (intervalHandle) clearInterval(intervalHandle);
+    intervalHandle = undefined;
+  },
 };

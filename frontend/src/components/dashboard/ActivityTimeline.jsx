@@ -1,7 +1,6 @@
-import { activities as fallbackActivities } from "../../data/mockDashboard";
 import { Card, CardContent, CardHeader } from "../ui/Card";
 
-export function ActivityTimeline({ activities = fallbackActivities }) {
+export function ActivityTimeline({ activities = [] }) {
   return (
     <Card>
       <CardHeader

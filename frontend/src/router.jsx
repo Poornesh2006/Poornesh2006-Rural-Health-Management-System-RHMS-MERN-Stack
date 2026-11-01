@@ -24,7 +24,6 @@ import {
   ShiftHandoverPage,
 } from "./pages/system/OperationsWorkbenchPage";
 import { OutreachPage } from "./pages/system/OutreachPage";
-import { PresentationDashboardPage } from "./pages/system/PresentationDashboardPage";
 import { PlatformPage } from "./pages/system/PlatformPage";
 import { ReferralsPage } from "./pages/system/ReferralsPage";
 import { SettingsPage } from "./pages/system/SettingsPage";
@@ -131,10 +130,6 @@ export const router = createBrowserRouter([
           {
             path: "analytics",
             element: <AnalyticsPage />,
-          },
-          {
-            path: "presentation",
-            element: <PresentationDashboardPage />,
           },
           {
             path: "about-project",

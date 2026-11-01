@@ -40,6 +40,7 @@ export const dashboardService = {
       lowVaccineBatches,
       doctors,
       recentNotifications,
+      liveQueue,
     ] = await Promise.all([
       patientRepository.countAll(),
       patientRepository.countToday(),
@@ -60,6 +61,7 @@ export const dashboardService = {
       VaccineBatch.countDocuments({ status: "low_stock" }),
       User.find({ role: "doctor", isActive: true }).select("fullName email primaryFacilityRef activeFacilityRef").sort({ createdAt: -1 }).limit(4).lean(),
       Notification.find().sort({ createdAt: -1 }).limit(4).lean(),
+      QueueEntry.find({ queueDate: { $gte: todayStart, $lt: tomorrow }, status: { $in: ["waiting", "called", "in_consultation"] } }).sort({ priority: -1, position: 1 }).limit(6).lean(),
     ]);
 
     return {
@@ -110,6 +112,13 @@ export const dashboardService = {
               : item.priority === "low"
                 ? "neutral"
                 : "info",
+      })),
+      liveQueue: liveQueue.map((item) => ({
+        token: item.displayToken,
+        name: item.patientName,
+        reason: item.department,
+        status: item.priority === "emergency" ? "Emergency" : item.priority === "normal" ? item.status.replaceAll("_", " ") : "Priority",
+        estimatedWaitMinutes: item.estimatedWaitMinutes,
       })),
     };
   },
