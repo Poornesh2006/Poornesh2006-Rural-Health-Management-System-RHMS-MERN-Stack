@@ -11,8 +11,6 @@ Use this folder as a clean reference point for academic submission materials.
 - [Screenshot Guide](../docs/screenshot-guide.md)
 - [Viva Preparation](../docs/viva-preparation.md)
 - [Presentation Outline](../docs/presentation-outline.md)
-- [Demo Script](../docs/demo-script.md)
-- [Demo Fallback Plan](../docs/demo-fallback-plan.md)
 - [Installation Guide](../docs/installation-guide.md)
 - [Deployment Guide](../docs/deployment-guide.md)
 - [Troubleshooting Guide](../docs/troubleshooting-guide.md)
@@ -22,4 +20,5 @@ Use this folder as a clean reference point for academic submission materials.
 
 - [VERSION](../VERSION)
 - [CHANGELOG](../CHANGELOG.md)
-- [Release Notes](../RELEASE_NOTES.md)
+- [Release Notes](release-documents/RELEASE_NOTES.md)
+- [Release Candidate](release-documents/RELEASE_CANDIDATE.md)
