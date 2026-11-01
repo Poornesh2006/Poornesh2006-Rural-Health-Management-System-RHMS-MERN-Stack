@@ -8,7 +8,11 @@ import { notificationSchedulerService } from "./services/notification-scheduler.
 
 async function bootstrap() {
   try {
-    await mongoose.connect(env.mongoUri);
+    await mongoose.connect(env.mongoUri, {
+      // Fail fast on a bad Atlas URI/network policy instead of waiting until
+      // the hosting platform terminates a process that has not bound its port.
+      serverSelectionTimeoutMS: 15000,
+    });
     const server = http.createServer(app);
     initializeSocket(server, env.corsOrigins);
     notificationSchedulerService.start();
@@ -26,7 +30,9 @@ async function bootstrap() {
     process.once("SIGTERM", () => shutdown("SIGTERM"));
     process.once("SIGINT", () => shutdown("SIGINT"));
   } catch (error) {
-    logger.error({ error }, "Failed to start RHMS API");
+    // Emit a concise startup cause for platform logs without exposing config values.
+    logger.error({ name: error.name, message: error.message }, "Failed to start RHMS API");
+    console.error(`RHMS startup failed: ${error.message}`);
     process.exit(1);
   }
 }

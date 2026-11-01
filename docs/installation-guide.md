@@ -42,8 +42,6 @@ Use `npm.cmd` in PowerShell environments where `npm.ps1` is blocked.
 - `JWT_REFRESH_SECRET`
 - `JWT_REFRESH_EXPIRES_IN`
 - `CORS_ORIGIN`
-- `DEFAULT_ADMIN_EMAIL`
-- `DEFAULT_ADMIN_PASSWORD`
 - `APP_BASE_URL`
 - `FRONTEND_URL`
 - `SMTP_HOST`

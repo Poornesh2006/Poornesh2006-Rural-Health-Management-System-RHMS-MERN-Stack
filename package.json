@@ -2,6 +2,9 @@
   "name": "rhms-monorepo",
   "private": true,
   "version": "1.0.0-rc.1",
+  "engines": {
+    "node": "22.x"
+  },
   "workspaces": [
     "frontend",
     "backend"
