@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "node --watch src/server.js",
     "start": "node src/server.js",
-    "audit:synthetic-data": "node src/scripts/audit-synthetic-data.js"
+    "audit:synthetic-data": "node src/scripts/audit-synthetic-data.js",
+    "bootstrap:admin": "node src/scripts/bootstrap-admin.js"
   },
   "dependencies": {
     "bcryptjs": "^3.0.2",
